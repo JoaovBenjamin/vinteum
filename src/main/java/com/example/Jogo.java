@@ -25,14 +25,14 @@ public class Jogo {
     }
 
     public String resultado(){
-        var jogadorEstourou = jogador.getPontos() > 21;
-        var computadorEstourou = computador.getPontos() > 21;
-
-        if(jogadorEstourou && computadorEstourou || jogador.getPontos() == computador.getPontos()){
+        var pontosIguais = jogador.getPontos() == computador.getPontos();
+        var jogadorTemMaisPontos = jogador.getPontos() > computador.getPontos();
+ 
+        if(jogador.estorou() && computador.estorou() || pontosIguais){
             return "Empate";
         }
 
-        if(!jogadorEstourou && jogador.getPontos() > computador.getPontos()){
+        if(!jogador.estorou() && (computador.estorou() || jogadorTemMaisPontos)){
             return "Você ganhou";
         }
         return "Você perdeu";

@@ -20,7 +20,13 @@ public class PrimaryController {
     public void turno(){
         if(!jogo.jogador.parou()) jogo.distribuirCartaParaJogador(jogo.jogador);
         if(!jogo.computador.parou()) jogo.distribuirCartaParaJogador(jogo.computador);
-    }
+
+        if(jogo.acabou()){
+            resultado.setText(jogo.resultado());
+        }
+
+        atualizar();
+        }
 
     public void atualizar(){
         pontosJogador.setText("Jogador: " + jogo.jogador.getPontos());

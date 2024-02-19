@@ -29,5 +29,9 @@ public class Jogador {
         return parou;
     }
 
+    public boolean estorou(){
+        return pontos > 21;
+    }
+
     
 }

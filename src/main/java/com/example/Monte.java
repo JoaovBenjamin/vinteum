@@ -9,7 +9,7 @@ public class Monte {
 
     public Monte() {
         for (Naipe naipe : Naipe.values()) {
-            for( int i = 1; i >=13; i++){
+            for( int i = 1; i <=13; i++){
                 var carta = new Carta(i, naipe);
                 cartas.add(carta);
             }
