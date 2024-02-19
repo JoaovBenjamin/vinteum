@@ -10,7 +10,9 @@ public class Jogador {
 
     public void receberCarta(Carta carta){
         cartas.add(carta);
-        pontos = pontos + carta.getNumero();
+        var pontos = carta.getNumero();
+        if (pontos > 10) pontos = 10;
+        this.pontos += pontos;
     }
 
     public void parar(){
@@ -33,5 +35,5 @@ public class Jogador {
         return pontos > 21;
     }
 
-    
+   
 }

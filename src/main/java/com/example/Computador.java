@@ -3,6 +3,8 @@ package com.example;
 public class Computador extends Jogador {
     @Override
     public boolean parou() {
-      return this.getPontos() > 16;
-  }
+      var computadorTemVantagem = this.getPontos() == 21 || this.getPontos() < getPontos();
+      if(computadorTemVantagem) return true;
+      return getPontos() > 16;
+    }
 }

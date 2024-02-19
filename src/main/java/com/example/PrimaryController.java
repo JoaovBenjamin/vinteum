@@ -18,6 +18,8 @@ public class PrimaryController {
     private Jogo jogo = new Jogo();
 
     public void turno(){
+        if(jogo.acabou()) return;
+
         if(!jogo.jogador.parou()) jogo.distribuirCartaParaJogador(jogo.jogador);
         if(!jogo.computador.parou()) jogo.distribuirCartaParaJogador(jogo.computador);
 
